@@ -32,14 +32,14 @@ BoomBikes, a US bike-sharing provider, faces revenue challenges due to the COVID
 * Model Generalization: R-squared of 0.8 on test set, close to 0.81 on train set.
 * Residuals Analysis: Outliers present, slight skewness, Q-Q plot deviation at extremes, Durbin-Watson around 2.
 > Model equation:
-* cnt=4107 + 2541×weathersit_LightRain + 2033×yr + 785×temp + 563×mnth_Sep − 1317×season_sping − 821×holiday − 690×weathersit_Mist − 601×mnth_Jul 
+* cnt = 4107 + 2033×yr + 785×temp + 563×mnth_Sep - 2541×weathersit_LightRain − 1317×season_sping − 821×holiday − 690×weathersit_Mist − 601×mnth_Jul 
 * cnt: the total rental bike
 > Positive correlated features
-* weathersit_LightRain: weather condition: Light Snow, Light Rain + Thunderstorm + Scattered clouds, Light Rain + Scattered clouds
 * yr: year
 * temp: temperature in Celsius
 * mnth_Sep: Sep of a year
 > Negative correlated features:
+* weathersit_LightRain: weather condition: Light Snow, Light Rain + Thunderstorm + Scattered clouds, Light Rain + Scattered clouds
 * season_spring: Spring season in a year
 * holiday: weather day is a holiday or not
 * weathersit_Mist: weather condition: Mist + Cloudy, Mist + Broken clouds, Mist + Few clouds, Mist
@@ -47,15 +47,13 @@ BoomBikes, a US bike-sharing provider, faces revenue challenges due to the COVID
 
 ## Recommendations
 > Business Strategy:
-* Increase bike availability during light rain conditions as they positively impact rentals.
 * Capitalize on the growing trend by planning for increased demand each year.
 * Ensure more bikes are available during warmer temperatures and in September.
 > Marketing:
 * Reduce marketing efforts during spring and holidays as they negatively affect demand.
 * Consider special promotions during July to counteract the seasonal dip in rentals.
 > Weather Considerations:
-* Prepare for higher demand during light rain conditions, but also ensure safety measures for riders.
-* Monitor weather forecasts closely, especially for mist, to adjust bike availability accordingly.
+* Monitor weather forecasts closely, especially for light rain and mist, to adjust bike availability accordingly.
 > Model Validation: Although the model shows slight deviations in residuals, it remains robust; continue to monitor for any significant changes. <br>
 > Future Analysis: Collect more detailed weather data to refine predictions, especially for conditions like heavy rain which are currently unrepresented.
 
